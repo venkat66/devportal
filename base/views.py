@@ -118,7 +118,7 @@ def companies(request):
 
 
 @api_view(['GET','POST'])
-def echodata(request):
+def echodata(request,format=None):
     companies = EchoData.objects.all()
     serializer = EchodataSerializer(companies, many=True)
     if request.method == 'POST':

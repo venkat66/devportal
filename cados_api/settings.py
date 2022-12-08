@@ -126,25 +126,16 @@ WSGI_APPLICATION = 'cados_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'B1no2yueUkhwq1XW3kzm',
-        'HOST': 'containers-us-west-121.railway.app',
-        'PORT': '6438',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-# db_from_env = dj_database_url.config(default='postgres://localhost')
-# DATABASES['default'].update(db_from_env)
+
+db_from_env = dj_database_url.config(default='postgres://localhost')
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
