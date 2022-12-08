@@ -119,6 +119,8 @@ def companies(request):
 
 @api_view(['GET','POST'])
 def echodata(request):
+    companies = EchoData.objects.all()
+    serializer = EchodataSerializer(companies, many=True)
     if request.method == 'POST':
         data = request.data
         obj = EchoData.objects.create(data=data)
@@ -126,4 +128,4 @@ def echodata(request):
         serializer = DevelopersSerializer(obj,many=False)
 
         return Response(serializer.data)
-    return Response('working',status=200)
+    return Response(serializer.data)
