@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from .models import Developers, Company
+from .models import *
 
 
 class CompanySerializer(ModelSerializer):
@@ -16,4 +16,10 @@ class DevelopersSerializer(ModelSerializer):
     company = CompanySerializer()
     class Meta:
         model = Developers
+        fields = '__all__'
+
+
+class EchodataSerializer(ModelSerializer):
+    class Meta:
+        model = EchoData
         fields = '__all__'

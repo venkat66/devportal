@@ -17,3 +17,10 @@ class Developers(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class EchoData(models.Model):
+    data = models.TextField()
+
+    def __str__(self):
+        return self.data

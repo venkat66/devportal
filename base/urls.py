@@ -17,5 +17,5 @@ urlpatterns = [
 
     # Companies
     path('companies/',views.companies),
-    path('ecodata/',views.echodata,name='ecodata')
+    path('echodata/',views.echodata,name='echodata')
  ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

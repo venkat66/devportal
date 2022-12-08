@@ -8,8 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.pagination import PageNumberPagination
 from django.shortcuts import render, redirect
 
-from .models import Company, Developers
-from .serializers import CompanySerializer, DevelopersSerializer
+from .models import *
+from .serializers import *
 
 # Create your views here.
 
@@ -121,6 +121,9 @@ def companies(request):
 def echodata(request):
     if request.method == 'POST':
         data = request.data
+        obj = EchoData.objects.create(data=data)
         print(request.data,'dddddd')
-        return Response(data)
+        serializer = DevelopersSerializer(obj,many=False)
+
+        return Response(serializer.data)
     return Response('working',status=200)
