@@ -135,16 +135,16 @@ WSGI_APPLICATION = 'cados_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgress',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'postgresql://postgres:B1no2yueUkhwq1XW3kzm@containers-us-west-121.railway.app:6438/railway',
-        'PORT': 6438,
+        'PASSWORD': 'B1no2yueUkhwq1XW3kzm',
+        'HOST': 'containers-us-west-121.railway.app',
+        'PORT': '6438',
     }
 }
 
-db_from_env = dj_database_url.config(default='postgres://localhost')
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(default='postgres://localhost')
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
