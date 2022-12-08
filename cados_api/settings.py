@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(t3_%e5jo$g)_5c676s%uvqe3s4l6m@ix#ihkocr2op*je)110
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -166,7 +166,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'assets/static'),
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets/static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -176,9 +178,9 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5500',
-    'http://localhost:3000'
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://127.0.0.1:5500',
+#     'http://localhost:3000'
+# ]
 
-# CORS_ALLOW_ALL_ORIGINS:True
+CORS_ALLOW_ALL_ORIGINS:True

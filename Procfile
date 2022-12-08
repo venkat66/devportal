@@ -1,0 +1,1 @@
+web: gunicorn 'cados_api.wsgi'
