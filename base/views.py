@@ -115,3 +115,12 @@ def companies(request):
     companies = Company.objects.all()
     serializer = CompanySerializer(companies, many=True)
     return Response(serializer.data)
+
+
+@api_view(['GET','POST'])
+def echodata(request):
+    if request.method == 'POST':
+        data = request.data
+        print(request.data,'dddddd')
+        return Response(data)
+    return Response('working',status=200)

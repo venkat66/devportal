@@ -16,5 +16,6 @@ urlpatterns = [
     path('developers/<str:username>/', views.DeveloperDetail.as_view()),
 
     # Companies
-    path('companies/',views.companies)
+    path('companies/',views.companies),
+    path('ecodata/',views.echodata,name='ecodata')
  ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
