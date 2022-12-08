@@ -125,7 +125,7 @@ def echodata(request):
         data = request.data
         obj = EchoData.objects.create(data=data)
         print(request.data,'dddddd')
-        serializer = DevelopersSerializer(obj,many=False)
+        serializer = EchodataSerializer(obj,many=False)
 
         return Response(serializer.data)
     return Response(serializer.data)
