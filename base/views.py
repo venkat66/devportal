@@ -119,6 +119,15 @@ def companies(request):
 
 @api_view(['GET','POST'])
 def echodata(request,format=None):
+    aid = request.GET.get('aid')
+    lat = request.GET.get('lat')
+    log = request.GET.get('longitude')
+    time = request.GET.gett('time')
+    gps_data, created = EchoData.objects.get_or_create(aid=aid)
+    gps_data.lat = lat
+    gps_data.log =log
+    gps_data.time=time
+    gps_data.save()
     companies = EchoData.objects.all()
     serializer = EchodataSerializer(companies, many=True)
     if request.method == 'POST':

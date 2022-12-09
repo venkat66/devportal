@@ -24,7 +24,7 @@ class EchoData(models.Model):
     lat = models.CharField(max_length=100,null=True)
     log = models.CharField(max_length=100,null=True)
     time = models.CharField(max_length=100,null=True)
-    data = models.TextField()
+    data = models.TextField(null=True)
 
     def __str__(self):
         return self.data
