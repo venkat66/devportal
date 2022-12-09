@@ -122,7 +122,7 @@ def echodata(request,format=None):
     aid = request.GET.get('aid')
     lat = request.GET.get('lat')
     log = request.GET.get('longitude')
-    time = request.GET.gett('time')
+    time = request.GET.get('time')
     gps_data, created = EchoData.objects.get_or_create(aid=aid)
     gps_data.lat = lat
     gps_data.log =log
