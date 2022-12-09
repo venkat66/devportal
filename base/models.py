@@ -20,7 +20,14 @@ class Developers(models.Model):
 
 
 class EchoData(models.Model):
+    aid = models.CharField(max_length=250,null=True)
+    lat = models.CharField(max_length=100,null=True)
+    log = models.CharField(max_length=100,null=True)
+    time = models.CharField(max_length=100,null=True)
     data = models.TextField()
 
     def __str__(self):
         return self.data
+
+    class Meta:
+        db_table = 'Gps_data'
